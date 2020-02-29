@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import 'react-native-gesture-handler';
 
-import Toolbar from '../../components/Toolbar';
 import api from '../../services/Api';
 import RepoItem from '../../components/RepoItem';
 import Header from '../../components/Header';

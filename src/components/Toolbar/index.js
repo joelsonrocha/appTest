@@ -6,7 +6,6 @@ import {
 import ToolbarButton from '../ToolbarButton'
 
 const Toolbar = ({navigation, state}) => {
-    console.log(state);
     return (
         <View style={styles.rodape}>
             <ToolbarButton iconName="home" enabled={state.index === 0} navigation={navigation} screenName='Home'/>
