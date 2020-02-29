@@ -1,29 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     StyleSheet,
     View,
-    SafeAreaView,
-    FlatList
+    SafeAreaView
 } from 'react-native';
 import 'react-native-gesture-handler';
 
-import Toolbar from '../../components/Toolbar';
-import api from '../../services/Api';
-import RepoItem from '../../components/RepoItem';
 import Header from '../../components/Header';
 
 
-const Videos = ({ navigation }) => {
-    const [repositories, setRepositories] = useState(null)
-    useEffect(() => {
-        async function fetchData() {
-            const result = await api.get('users/joelsonrocha/repos');
-            setRepositories(result.data);
-        }
-        fetchData();
-    }, []);
-
-
+const Videos = () => {
     return (
         <SafeAreaView style={styles.container}>
             <Header title="Vídeos"/>
