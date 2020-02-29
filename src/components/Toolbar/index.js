@@ -5,14 +5,15 @@ import {
 } from 'react-native';
 import ToolbarButton from '../ToolbarButton'
 
-const Toolbar = ({active}) => {
+const Toolbar = ({navigation, state}) => {
+    console.log(state);
     return (
         <View style={styles.rodape}>
-            <ToolbarButton iconName="home" enabled={active === "home"} />
-            <ToolbarButton iconName="play-circle" enabled={active === "videos"} />
-            <ToolbarButton iconName="shopping-cart" enabled={active === "market"} />
-            <ToolbarButton iconName="heart" enabled={active === "date"} />
-            <ToolbarButton iconName="bell" enabled={active === "notifications"} />
+            <ToolbarButton iconName="home" enabled={state.index === 0} navigation={navigation} screenName='Home'/>
+            <ToolbarButton iconName="play-circle" enabled={state.index === 1}  navigation={navigation} screenName='Videos'/>
+            <ToolbarButton iconName="shopping-cart" enabled={state.index === 2} navigation={navigation} screenName='Home'/>
+            <ToolbarButton iconName="heart" enabled={state.index === 3} navigation={navigation} screenName='Home'/>
+            <ToolbarButton iconName="bell" enabled={state.index === 4} navigation={navigation} screenName='Home'/>
         </View>
     )
 }
@@ -21,7 +22,8 @@ const styles = StyleSheet.create({
     rodape: {
         borderTopWidth: 1,
         borderTopColor: '#ccc',
-        height: 50,
+        height: 80,
+        paddingBottom: 30,
         width: '100%',
         justifyContent: 'space-between',
         alignItems: "center",

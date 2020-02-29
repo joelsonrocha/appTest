@@ -1,54 +1,36 @@
-import React, {useEffect, useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  FlatList,
-  Text
-} from 'react-native';
+import React from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import Home from './src/screens/home';
+import Videos from './src/screens/videos';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Toolbar from './src/components/Toolbar';
-import api from './src/services/Api';
-import RepoItem from './src/components/RepoItem';
-import Header from './src/components/Header';
 
-const App = () => {
-  const [repositories, setRepositories] =  useState({full_name: null, language: null, id: null})
-  useEffect(()=>{
-    async function fetchData(){
-      const result = await api.get('users/joelsonrocha/repos');
-      setRepositories(result.data);
-    }
-    fetchData();
-  },[]);
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-  
+function App() {
+  const stackConfig = initialRouteName => ({
+    defaulNavigationOptions: {
+      header: null
+    },
+    initialRouteName,
+    headerMode: 'screen'
+  });
   return (
-    <SafeAreaView style={styles.container}>
-      <Header/>
-        <View style={styles.center_content}>  
-          <FlatList 
-          showsVerticalScrollIndicator={false}
-            data={repositories}
-            renderItem={({ item }) => <RepoItem item={item}></RepoItem>}
-            keyExtractor={item => item.id}
-            />
-        </View>
-      <Toolbar active="home"></Toolbar>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Home"
+        tabBar={props => <Toolbar {...props} />}
+      >
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Videos" component={Videos} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
-};
-
-const styles = StyleSheet.create({
-  container:{
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  center_content: {
-   flex: 1
-  }
-
-});
+}
 
 export default App;

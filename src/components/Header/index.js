@@ -5,10 +5,10 @@ import {
     Text
 } from 'react-native';
 
-const Header = ({ active }) => {
+const Header = ({ title }) => {
     return (
         <View style={styles.header}>
-            <Text>Home</Text>
+            <Text>{title}</Text>
         </View>
     )
 }
