@@ -12,10 +12,7 @@ const Tab = createBottomTabNavigator();
 function Routes() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-        tabBar={props => <Toolbar {...props} />}
-      >
+      <Tab.Navigator initialRouteName="Home" tabBar={props => <Toolbar {...props} />}>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Videos" component={Videos} />
       </Tab.Navigator>
