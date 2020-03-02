@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   rodape: {
     borderTopWidth: 1,
     borderTopColor: '#ccc',
-    height: 80,
-    paddingBottom: 30,
+    height: 70,
+    paddingBottom: 20,
     width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',

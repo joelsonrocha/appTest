@@ -5,7 +5,7 @@ const Header = ({ title }) => {
   return (
     <View style={styles.header}>
       <StatusBar backgroundColor="#efefef" barStyle="dark-content" />
-      <Text>{title}</Text>
+      <Text style={styles.headerTitle}>{title}</Text>
     </View>
   );
 };
@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: 10,
     backgroundColor: '#efefef'
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold'
   }
 });
 export default Header;

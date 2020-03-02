@@ -10,16 +10,14 @@
     "rebuild": "yarn clean && yarn build",
     "clean": "yarn clean:android && yarn clean:ios && rm -rf node_modules",
     "clean:android": "rm -rf android/app/build && rm -rf android/build && rm -rf android/.gradle && rm -rf android/build.gradle-e",
-    "clean:ios": "rm -rf ios/build && rm -rf ios/Pods && rm -rf ios/midwaybanking.xcworkspace",
+    "clean:ios": "rm -rf ios/build && rm -rf ios/Pods && rm -rf ios/appTest.xcworkspace",
     "build": "yarn && yarn build:android && yarn build:ios",
     "build:android": "npx jetifier",
     "build:ios": "cd ios/ && pod install",
     "android": "react-native run-android --variant=devDebug",
     "android:release": "react-native run-android --variant=prodRelease --no-packager",
     "android:qa": "react-native run-android --variant=qaRelease --no-packager",
-    "ios": "react-native run-ios --scheme MidwayBankingDev",
-    "ios:release": "react-native run-ios --scheme MidwayBanking --configuration Release --no-packager",
-    "ios:qa": "react-native run-ios --scheme MidwayBankingQA --configuration Release --no-packager"
+    "ios": "react-native run-ios --scheme appTest"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
@@ -30,11 +28,15 @@
     "fsevents": "^2.1.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-gesture-bottom-sheet": "^1.0.1",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.2.0",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-status-bar-height": "^2.4.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-webview": "^8.1.2",
+    "react-native-youtube": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
