@@ -4,10 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from './src/screens/home';
-import Videos from './src/screens/videos';
-import Toolbar from './src/components/Toolbar';
-import VideoPlayer from './src/screens/videoPlayer';
+import Home from './screens/Home';
+import Videos from './screens/Videos';
+import Toolbar from './components/Toolbar';
+import VideoPlayer from './screens/VideoPlayer';
 
 const Tab = createBottomTabNavigator();
 const NavStack = createStackNavigator();
