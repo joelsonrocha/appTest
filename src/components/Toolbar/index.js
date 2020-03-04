@@ -21,7 +21,7 @@ const Toolbar = ({ navigation, state }) => {
         iconName="shopping-cart"
         enabled={state.index === 2}
         navigation={navigation}
-        screenName="Home"
+        screenName="Market"
       />
       <ToolbarButton
         iconName="heart"
