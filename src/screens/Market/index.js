@@ -1,6 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import Header from '../../components/Header';
 
-export default function Market() {
-  return <View />;
+export default function Market({ navigation }) {
+  return (
+    <SafeAreaView>
+      <Header title="Market" navigation={navigation} showMenu={true}></Header>
+    </SafeAreaView>
+  );
 }
