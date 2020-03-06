@@ -20,6 +20,7 @@
     "ios": "react-native run-ios --scheme appTest"
   },
   "dependencies": {
+    "@react-native-community/geolocation": "^2.0.2",
     "@react-native-community/masked-view": "^0.1.6",
     "@react-navigation/bottom-tabs": "^5.1.0",
     "@react-navigation/drawer": "^5.1.1",
